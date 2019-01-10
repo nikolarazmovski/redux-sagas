@@ -8,8 +8,8 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
 
-    case "GET_RANDOM_DATA":
-      newState.randomData = "Random Data";
+    case "GET_RANDOM_DATA_ASYNC":
+      newState.randomData = JSON.stringify(action.value.data);
       break;
     case "SEND_USER_ASYNC":
       newState.gereetings = "Hi " + action.value.name + " " + action.value.surname;
