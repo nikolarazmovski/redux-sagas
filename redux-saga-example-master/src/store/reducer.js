@@ -1,21 +1,21 @@
 const initialState = {
-  age: 20
+  gereetings: "",
+  randomData: ""
 };
 
 const reducer = (state = initialState, action) => {
   const newState = { ...state };
 
   switch (action.type) {
-    case "AGE_UP_ASYNC":
-      newState.age += action.value;
-      break;
 
-    case "AGE_DOWN_ASYNC":
-      newState.age -= action.value;
+    case "GET_RANDOM_DATA":
+      newState.randomData = "Random Data";
       break;
-     case "SEND_NAME_ASYNC":
-     newState.hi = action.value.name + " " + action.value.surname; 
-  
+    case "SEND_USER_ASYNC":
+      newState.gereetings = "Hi " + action.value.name + " " + action.value.surname;
+      break;
+    case "RESET_ALL":
+      return initialState;
   }
   return newState;
 };

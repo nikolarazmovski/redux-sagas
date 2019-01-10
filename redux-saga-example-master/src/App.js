@@ -1,51 +1,40 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
+import GetButton from "./components/GetButton";
+import LoginForm from "./components/LoginForm";
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {};
   }
 
-  inputName = (evt) => {
-    this.setState({name: evt.target.value});
-  }
+  inputName = evt => {
+    this.setState({ name: evt.target.value });
+  };
 
-  inputSurname = (evt) => {
-    this.setState({surname: evt.target.value});
-  }
+  inputSurname = evt => {
+    this.setState({ surname: evt.target.value });
+  };
   render() {
     return (
       <div className="App">
-        <div className="Age-label">
-          your age: <span>{this.props.age}</span>
-        </div>
-        <button onClick={this.props.onAgeUp}>Age UP</button>
-        <button onClick={this.props.onAgeDown}>Age Down</button>
-        <div>
-          <input onChange={this.inputName}/>
-          <input onChange={this.inputSurname}/>
-        <button onClick={() => this.props.sendName(this.state.name, this.state.surname)}>Send</button>
-        <h1>Hi {this.props.hi}</h1>
-        </div>
+        <button onClick={this.props.onResetAll}>Reset all</button>
+        <GetButton />
+        <LoginForm />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {
-    age: state.age,
-    hi: state.hi
-  };
+  return {};
 };
 
 const mapDispachToProps = dispatch => {
   return {
-    onAgeUp: () => dispatch({ type: "AGE_UP", value: 1 }),
-    onAgeDown: () => dispatch({ type: "AGE_DOWN", value: 1 }),
-    sendName: (name, surname) => dispatch({ type: "SEND_NAME", value: {name, surname}})
+    onResetAll: () => dispatch({ type: "RESET_ALL"})
   };
 };
 export default connect(
