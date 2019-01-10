@@ -5,7 +5,7 @@ class GetDisplay extends Component {
   render() {
     return (
       <div>
-        {this.props.randomData && <h1>{this.props.randomData}</h1>}
+        {this.props.randomData && <span>{this.props.randomData}</span>}
       </div>
     );
   }

@@ -17,7 +17,7 @@ class GetButton extends Component {
     };
     render() {
         return <div>
-            <button onClick={this.props.getRandomData}>Get Random</button>;
+            <button onClick={this.props.getRandomData}>Get Random</button>
             <GetDisplay />
      </div>
     }
