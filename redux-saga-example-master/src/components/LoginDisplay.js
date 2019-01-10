@@ -13,13 +13,14 @@ class LoginDisplay extends Component {
 
 const mapStateToProps = state => {
   return {
-    gereetings: state.gereetings
+    gereetings: state.reducerLogin.gereetings
   };
 };
 
 const mapDispachToProps = dispatch => {
   return {};
 };
+
 export default connect(
   mapStateToProps,
   mapDispachToProps

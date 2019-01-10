@@ -14,6 +14,7 @@ function* sendUser(action) {
     crossdomain: true 
   })
     .then(function(response) {
+      console.log('Response ' + response)
       return put({ type: "SEND_USER_ASYNC", value: action.value });
     })
     .catch(function(error) {

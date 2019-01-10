@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import  getReducer  from './reducerGet';
-import  loginReducer  from './reducerLogin';
-import  resetReducer  from './reducerReset';
+import  reducerGet  from './reducerGet';
+import  reducerLogin  from './reducerLogin';
+import  reducerReset  from './reducerReset';
 
 export default combineReducers({
-    getReducer,
-    loginReducer,
-    resetReducer
+    reducerGet,
+    reducerLogin,
+    reducerReset
 })

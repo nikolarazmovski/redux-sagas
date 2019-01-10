@@ -34,7 +34,7 @@ const mapStateToProps = state => {
 
 const mapDispachToProps = dispatch => {
   return {
-    onResetAll: () => dispatch({ type: "RESET_ALL"})
+    onResetAll: () => dispatch({ type: "RESET_ALL", value: this.state})
   };
 };
 export default connect(

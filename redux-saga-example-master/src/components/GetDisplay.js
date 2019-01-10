@@ -13,7 +13,7 @@ class GetDisplay extends Component {
 
 const mapStateToProps = state => {
   return {
-    randomData: state.randomData
+    randomData: state.reducerGet.randomData
   };
 };
 

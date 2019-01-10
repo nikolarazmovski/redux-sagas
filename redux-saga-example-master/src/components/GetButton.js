@@ -15,16 +15,21 @@ class GetButton extends Component {
     inputSurname = evt => {
         this.setState({ surname: evt.target.value });
     };
+
     render() {
-        return <div>
-            <button onClick={this.props.getRandomData}>Get Random</button>
-            <GetDisplay />
-     </div>
+        return (
+            <div>
+                <button onClick={this.props.getRandomData}>Get Random</button>
+                <GetDisplay />
+            </div>
+        )
     }
 }
 
 const mapStateToProps = state => {
-    return {};
+    return {
+        ...state
+    };
 };
 
 const mapDispachToProps = dispatch => {
