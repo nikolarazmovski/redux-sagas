@@ -2,6 +2,7 @@ import axios from "axios";
 import { takeLatest, put } from "redux-saga/effects";
 
 function* sendUser(action) {
+  console.log("ENTERED: sagasLogin | WORK: SEND_USER");
   yield yield axios({
     method: "post",
     url: "http://localhost:9966/",
@@ -24,5 +25,6 @@ function* sendUser(action) {
 
 
 export function* loginSagas() {
+  console.log("ENTERED: sagasLogin | WATCH: SEND_USER");
   yield takeLatest("SEND_USER", sendUser);
 }

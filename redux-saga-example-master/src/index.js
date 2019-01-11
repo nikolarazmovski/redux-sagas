@@ -14,7 +14,8 @@ const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
 
 store.subscribe(() => {
-  console.log(store.getState())
+  console.log("STORE STATE: ");
+  console.log(store.getState());
 })
 
 ReactDOM.render(
