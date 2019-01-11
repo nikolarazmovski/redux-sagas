@@ -11,8 +11,12 @@ import {rootSaga } from "./sagas/saga";
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
-
 sagaMiddleware.run(rootSaga);
+
+store.subscribe(() => {
+  console.log(store.getState())
+})
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
